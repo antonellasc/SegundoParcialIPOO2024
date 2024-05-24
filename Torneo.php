@@ -105,7 +105,12 @@ class Torneo{
             if($unPartido instanceof PartidoFutbol && $deporte == strtolower("futbol")){
                 $equipoGanador = $unPartido->darEquipoGanador();
                 $colObjEquipoGanador[] = $equipoGanador;
+            }elseif($unPartido instanceof PartidoBasquet == strtolower("basquet")){
+                $equipoGanador = $unPartido->darEquipoGanador();
+                $colObjEquipoGanador[] = $equipoGanador;
             }
+
+            return $colObjEquipoGanador;
 
     }
 }
@@ -115,11 +120,14 @@ class Torneo{
     //y la otra clave es ‘premioPartido’ que contiene el valor obtenido del coeficiente del Partido por el 
     // importe configurado para el torneo. (premioPartido = Coef_partido * ImportePremio)
     public function calcularPremioPartido($OBJPartido){
-        $premioDelPartido = ['equipoGanador' => null, 'premioPartido' => null];
+        $premioDelPartido = ['equipoGanador' => null, 'premioPartido' => 0];
+        if($OBJPartido !== null){
         $ganador = $OBJPartido->darEquipoGanador();
         $premio = $OBJPartido->coeficientePartido() * $this->getImportePremio();
         $premioDelPartido['equipoGanador'] = $ganador;
         $premioDelPartido['premioPartido'] = $premio;
+        }
+        
 
         return $premioDelPartido;
     }

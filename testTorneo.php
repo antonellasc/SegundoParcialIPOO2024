@@ -37,13 +37,31 @@ $objPartido5 = new PartidoFutbol(15, "2024-05-08", $objE3, 0, $objE4, 1);
 $objPartido6 = new PartidoFutbol(16, "2024-05-09", $objE5, 2, $objE6, 3);
 
 // 3 a
-echo $objTorneo->ingresarPartido($objE5, $objE11, "2024-05-23", "Futbol");
+$objPartido7 = $objTorneo->ingresarPartido($objE5, $objE11, "2024-05-23", "Futbol");
+echo $objPartido7;
 
 // 3 b
-echo $objTorneo->ingresarPartido($objE11, $objE11, "2024-05-23", "Basquetbol");
+$objPartido8 = $objTorneo->ingresarPartido($objE11, $objE11, "2024-05-23", "Basquetbol");
+echo $objPartido8;
 
 // 3 c
-echo $objTorneo->ingresarPartido($objE9, $objE10, "2024-05-25", "Basquetbol");
+$objPartido9 = $objTorneo->ingresarPartido($objE9, $objE10, "2024-05-25", "Basquetbol");
+echo $objPartido9;
+
+// 3 d 
+echo "Basquet: \n";
+print_r($objTorneo->darGanadores("basquet"));
+
+// 3 e
+echo "Futbol: \n";
+print_r($objTorneo->darGanadores("futbol"));
+
+// 3 f
+print_r($objTorneo->calcularPremioPartido($objPartido7));
+
+print_r($objTorneo->calcularPremioPartido($objPartido8));
+
+print_r($objTorneo->calcularPremioPartido($objPartido9));
 
 
 
